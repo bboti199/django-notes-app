@@ -8,6 +8,8 @@ DB_USER=
 DB_PASS=  
 DB_HOST=  
 DB_PORT=  
+# Download firebase account service key to the root of the project
+FIREBASE_ADMIN_PATH=
 ```
 
 Migrate the database
