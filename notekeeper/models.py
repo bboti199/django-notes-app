@@ -1,6 +1,8 @@
 import uuid
 from django.db import models
 from django.contrib.auth.models import AbstractBaseUser, BaseUserManager, PermissionsMixin
+from taggit.managers import TaggableManager
+from notekeeper_django import settings
 
 
 class UserManager(BaseUserManager):
@@ -38,3 +40,14 @@ class User(AbstractBaseUser, PermissionsMixin):
     USERNAME_FIELD = 'email'
 
     REQUIRED_FIELDS = ('fid',)
+
+
+class Note(models.Model):
+    title = models.CharField(max_length=500)
+    content = models.TextField()
+    tags = TaggableManager()
+    author = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
+    created_at = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return self.title

@@ -9,7 +9,7 @@ class UserAdmin(BaseUserAdmin):
 
     fieldsets = (
         (None, {'fields': ('email', 'password')}),
-        ('Personal info', {'fields': ('fid', )}),
+        ('Personal info', {'fields': ('fid',)}),
         ('Permissions', {'fields': ('is_staff', 'is_superuser')})
     )
 
@@ -22,3 +22,4 @@ class UserAdmin(BaseUserAdmin):
 
 
 admin.site.register(models.User, UserAdmin)
+admin.site.register(models.Note)
