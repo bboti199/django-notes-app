@@ -13,6 +13,9 @@ firebase-admin = "*"
 django-environ = "*"
 django-taggit = "*"
 django-taggit-serializer = "*"
+django-cors-headers = "*"
+gunicorn = "*"
+whitenoise = "*"
 
 [requires]
 python_version = "3.8"

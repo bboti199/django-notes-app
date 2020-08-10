@@ -1,0 +1,1 @@
+web: gunicorn notekeeper_django.wsgi --log-file -
